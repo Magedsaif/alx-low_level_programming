@@ -7,7 +7,7 @@
 int main(void)
 {
 char ch = 'a';
-while (ch != 'z')
+while (ch != 'z' + 1)
 {
 if ((ch != 'q') && (ch != 'e'))
 putchar (ch);
