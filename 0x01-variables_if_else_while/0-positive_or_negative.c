@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include<stdio.h>
-/*
-*main- show if number is positve or negative
+/**
+*main - entry point
 *
-*Retur:always return 0
+*Return:always return 0
 **/
 int main(void)
 {
