@@ -7,14 +7,14 @@
 int main(void)
 {
 int a;
-char a;
+char ch;
 for (a = 0; a < 10; a++)
 {
 putchar('0' + a);
 }
-for (a = 'a'; a >= 'f'; a++)
+for (ch = 'a'; ch  <= 'f'; ch++)
 {
-putchar (a);
+putchar (ch);
 }
 putchar ('\n');
 return (0);
