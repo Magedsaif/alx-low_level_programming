@@ -6,10 +6,11 @@
 */
 int main(void)
 {
-char ch;
-for (ch = 'a' - 97; ch < 'k' - 97; ch++)
+int a;
+for (a = 0; a < 10; a++)
 {
-putchar ("%d", ch);
+putchar ('0' + a);
 }
+putchar ('\n');
 return (0);
 }
