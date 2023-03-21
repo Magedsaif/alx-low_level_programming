@@ -1,11 +1,10 @@
-#include<stdio.h>
 #include"main.h"
 /**
 *main - print a characters on the screen
 *
 * RETURN: always return 0 upoon seccess
 **/
-int main (void)
+int main(void)
 {
 _putchar(_);
 _putchar(p);
