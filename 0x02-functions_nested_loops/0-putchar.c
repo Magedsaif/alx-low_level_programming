@@ -4,8 +4,14 @@
 *
 * RETURN: always return 0 upoon seccess
 **/
-int main(void)
+void main(void)
 {
-_putchar(H);
+_putchar('_');
+_putchar('p');
+_putchar('u');
+_putchar('c');
+_putchar('h');
+_putchar('a');
+_putchar('r');
 return (0);
 }
