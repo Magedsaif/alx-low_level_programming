@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<main.h>
 /**
 *main - print a characters on the screen
 *
