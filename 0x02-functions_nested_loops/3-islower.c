@@ -2,8 +2,8 @@
 #include<stdio.h>
 /**
 *_islower - main function
-*
-*Return : 1 if true, 0 is false
+*@c:character to compare
+*Return: 1 if true, 0 is false
 **/
 int _islower(int c)
 {
