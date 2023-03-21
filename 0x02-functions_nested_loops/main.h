@@ -1,9 +1,5 @@
 #ifndef MAIN_H
-#define MAIN_Hi
-
-/**
- *_putchar - writes the character c to std
- **/
+#define MAIN_H
 
 int _putchar(char c)
 
