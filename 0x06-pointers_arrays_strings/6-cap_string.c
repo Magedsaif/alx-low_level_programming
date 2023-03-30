@@ -15,7 +15,19 @@ char *cap_string(char *src)
 	}
 	while (src[i] != '\0')
 	{
-		if ((src[i] >= ' ') && (src[i] <= '/'))
+		if ((src[i] == ' ')
+		|| (src[i] == '\t')
+		|| (src[i] == '\n')
+		|| (src[i] == ',')
+		|| (src[i] == ';')
+		|| (src[i] == '.')
+		|| (src[i] == '!')
+		|| (src[i] == '?')
+		|| (src[i] == '"')
+		|| (src[i] == '(')
+		|| (src[i] == ')')
+		|| (src[i] == '{')
+		|| (src[i] == '}'))
 		{
 			if ((src[i + 1] >= 'a') && (src[i + 1] <= 'z'))
 			{
