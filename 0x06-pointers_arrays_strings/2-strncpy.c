@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strncat - function copies the string pointed to by src
+ * _strncpy - function copies the string pointed to by src
  *
  * @dest: destination of copy
  * @src: source array to copy
@@ -19,7 +19,7 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		dest[j + i] = src[i];
 	}
-    dest[i+j] = '\0';
+	dest[i + j] = '\0';
 
 	return (dest);
 
