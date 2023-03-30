@@ -4,7 +4,7 @@
  *
  * @dest: destination of concat
  * @src: source array to concat
- * @n: number of bytes from src 
+ * @n: number of bytes from src
  * Return: a pointer to the resulting string dest
  */
 char *_strncat(char *dest, char *src, int n)
@@ -19,7 +19,6 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		dest[j + i] = src[i];
 	}
-	dest[j + i] = '\0';
 
 	return (dest);
 
