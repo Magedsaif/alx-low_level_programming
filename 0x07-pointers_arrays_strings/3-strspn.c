@@ -16,18 +16,17 @@ int a, b;
 int counter = 0;
 
 for (a = 0; s[a] != '\0'; a++)
-	{
-	if (s[a] != 32)
-		{	
-		for (b = 0; accept[b] != '\0'; b++)
-			{
-			if (s[a] == accept[b])
-				counter++;
-			}
-		}
-	else 
-		return (counter);	
-		
-	}
+{
+if (s[a] != 32)
+{
+for (b = 0; accept[b] != '\0'; b++)
+{
+if (s[a] == accept[b])
+counter++;
+}
+}
+else
+return (counter);
+}
 return (counter);
 }
