@@ -22,10 +22,6 @@ for (i = 0; s[i] != '\0'; i++)
 		if (s[i] == accept[j])
 			count++;
 	}
-	if (s[j] == '\0')
-	{
-		return (count);
-	}
 }
 	return (count);
 }
