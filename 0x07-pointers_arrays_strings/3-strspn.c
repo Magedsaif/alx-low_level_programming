@@ -20,8 +20,7 @@ for (i = 0; s[i] != '\0'; i++)
 	for (j = 0; s[j] != '\0'; j++)
 	{
 		if (s[i] == accept[j])
-		count++;
-		break;
+			count++;
 	}
 	if (s[j] == '\0')
 	{
