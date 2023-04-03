@@ -22,7 +22,7 @@ while (*t != '\0')
 {
 if (*s == *t)
 {
-return (char *)(s);
+return (s);
 }
 t++;
 }
