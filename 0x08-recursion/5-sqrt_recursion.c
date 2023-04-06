@@ -1,20 +1,20 @@
 #include "main.h"
 /**
  * find_square - finds the square root of two numbers
- * @a: a number to get the square root of.
- * @b: a number to test if i could get the square root of @a
- * Return: square root of @a
+ * @n: a number to get the square root of.
+ * @b: a number to test if i could get the square root of @n
+ * Return: square root of @n
  *
 */
 
-int find_square(int a, int b)
+int find_square(int n, int b)
 {
-	if (b * b > a) /*means it doesn't have a square root*/
+	if (b * b > n) /*means it doesn't have a square root*/
 		return (-1);
-	else if (b * b == a) /*means it have a square root*/
+	else if (b * b == n) /*means it have a square root*/
 		return (b);
 	else /*the recursive function*/
-		return (find_square(a, b + 1));
+		return (find_square(n, b + 1));
 	return (1);
 }
 
