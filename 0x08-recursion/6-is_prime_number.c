@@ -2,19 +2,19 @@
 /**
  * find_prime - checks for aprime number
  * @n: a given number to check if its a prime number
- * @b: a number to test if i @n is a prime number
- * Return: return prime number @n
+ * @i: a number to test if @n is a prime number
+ * Return: prime number @n
  *
 */
 
-int find_prime(int n, int b)
+int find_prime(int n, int i)
 {
-	if (n <= 1 || n % b == 0) /*excludes non prime numbers*/
+	if (n <= 1 || n % i == 0) /*excludes non prime numbers*/
 		return (0);
-	else if (n == b) /*means it's a prime number*/
+	else if (n == i) /*means it's a prime number*/
 		return (1);
-	else if (n > b) /*keeps adding to @b starting from 2 to get to prime num*/
-		find_prime(n, b + 1);
+	else if (n > i) /*keeps adding to @i starting from 2 to get to prime num*/
+		find_prime(n, i + 1);
 
 	return (1);
 }
