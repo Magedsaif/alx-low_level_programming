@@ -9,24 +9,21 @@
 */
 int main(int argc, char *argv[])
 {
-int i, j;
-int sum = 0;
+int a, num;
+int summation = 0;
 
-for (i = 1; i < argc; i++)
+for (a = 1; a < argc; a++)
 {
-	for (j = 0; argv[i][j] != '\0'; j++) /* a loop for the entire array*/
+	for (num = 0; argv[a][num] != '\0'; num++) /* a loop for the entire array*/
 		{
-			if (!(isdigit(argv[i][j]))) /*check if any symbols is inputed */
+			if (!(isdigit(argv[a][num]))) /*check if any symbols is inputed */
 				{
 					printf("Error\n");
-					return (1);
-				}
-			else
-				{
-					sum += atoi(argv[i]); /*adding to sum in every loop*/
-				}
+						return (1);
+				}		
 		}
+		summation = summation + atoi(argv[a]); /*adding to summation in every loop*/
 }
-printf("%d\n", sum);
+printf("%d\n", summation);
 return (0);
 }
