@@ -14,15 +14,15 @@ int summation = 0;
 
 for (a = 1; a < argc; a++)
 {
-	for (num = 0; argv[a][num] != '\0'; num++) /* a loop for the entire array*/
-		{
-			if (!(isdigit(argv[a][num]))) /*check if any symbols is inputed */
-				{
-					printf("Error\n");
-						return (1);
-				}		
-		}
-		summation = summation + atoi(argv[a]); /*adding to summation in every loop*/
+for (num = 0; argv[a][num] != '\0'; num++) /* a loop for the entire array*/
+{
+if (!(isdigit(argv[a][num]))) /*check if any symbols is inputed */
+{
+printf("Error\n");
+return (1);
+}
+}
+summation = summation + atoi(argv[a]); /*adding to summation in every loop*/
 }
 printf("%d\n", summation);
 return (0);
