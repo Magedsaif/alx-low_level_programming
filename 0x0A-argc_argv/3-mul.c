@@ -16,6 +16,6 @@ if (argc == 3)
 else
 	{
 		printf("error\n");
-		return (1);
+	return (1);
 	}
 }
