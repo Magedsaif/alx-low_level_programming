@@ -15,16 +15,15 @@ char *str;
 unsigned int i;
 
 str = malloc(size * sizeof(char));
-for (i = 0; i < size; i++)
-{
-	str[i] = c;
-}
+
 if (size == 0 || str == NULL)
 {
 	return (NULL);
 }
-else
+
+for (i = 0; i < size; i++)
 {
-	return (str);
+	str[i] = c;
 }
+return (str);
 }
