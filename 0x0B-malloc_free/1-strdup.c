@@ -22,6 +22,17 @@ unsigned int i;
 
 new_string = malloc(size * sizeof(char));
 
+if (str == NULL)
+{
+	printf("failed to allocate memory");
+	return (NULL);
+}
+
+if (new_string == NULL)
+{
+	return(NULL);
+}
+
 for (i = 0; i < size; i++)
 {
 	new_string[i] = str[i];
@@ -29,8 +40,4 @@ for (i = 0; i < size; i++)
 return (new_string);
 free(new_string);
 
-if (str == NULL || new_string == NULL)
-{
-	return (NULL);
-}
 }
