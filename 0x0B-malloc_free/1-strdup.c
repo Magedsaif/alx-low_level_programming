@@ -24,7 +24,7 @@ new_string = malloc(size * sizeof(char));
 
 if (str == NULL)
 {
-	printf("failed to allocate memory");
+	printf("failed to allocate memory\n");
 	return (NULL);
 }
 
@@ -38,6 +38,5 @@ for (i = 0; i < size; i++)
 	new_string[i] = str[i];
 }
 return (new_string);
-free(new_string);
-
+free (new_string);
 }
