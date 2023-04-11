@@ -17,26 +17,29 @@
 char *_strdup(char *str)
 {
 char *new_string;
-unsigned int size = sizeof(str);
 unsigned int i;
+unsigned int len = 0;
 
 if (str == NULL)
 {
-	printf("failed to allocate memory\n");
 	return (NULL);
 }
 
-new_string = malloc(size * sizeof(char));
-
-for (i = 0; i < size; i++)
+while (str[len] != '\0')
 {
-	new_string[i] = str[i];
+	len++;
 }
-return (new_string);
-free(new_string);
+
+new_string = malloc(sizeof(char) * len + 1);
 
 if (new_string == NULL)
 {
 	return (NULL);
 }
+
+for (i = 0; i < len; i++)
+{
+	new_string[i] = str[i];
+}
+return (new_string);
 }
