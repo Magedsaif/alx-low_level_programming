@@ -30,7 +30,7 @@ if (str == NULL)
 
 if (new_string == NULL)
 {
-	return(NULL);
+	return (NULL);
 }
 
 for (i = 0; i < size; i++)
@@ -38,5 +38,5 @@ for (i = 0; i < size; i++)
 	new_string[i] = str[i];
 }
 return (new_string);
-free (new_string);
+free(new_string);
 }
