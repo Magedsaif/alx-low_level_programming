@@ -25,19 +25,19 @@ if (str == NULL)
 	return (NULL);
 }
 
-while (str[len] != '\0')
+while (str[len] != '\0') /*geting the length of str */
 {
 	len++;
 }
 
-new_string = malloc(sizeof(char) * len + 1);
+new_string = malloc(sizeof(char) * len + 1); /*allocating memory just nedded*/
 
 if (new_string == NULL)
 {
 	return (NULL);
 }
 
-for (i = 0; i < len; i++)
+for (i = 0; i < len; i++) /*the copying part to a new string*/
 {
 	new_string[i] = str[i];
 }
