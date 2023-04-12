@@ -24,29 +24,28 @@ unsigned int len1 = 0;
 unsigned int len2 = 0;
 unsigned int total_length = 0;
 
-if (s1 == NULL || s2 == NULL)
+if (s1 == NULL)
 {
-	return (NULL);
+	s1 = "";
 }
-
+if (s2 == NULL)
+{
+	s2 = "";
+}
 while (s1[len1] != '\0') /*geting the length of s1 */
 {
 	len1++;
 }
-
 while (s2[len2] != '\0') /*geting the length of s2 */
 {
 	len2++;
 }
-
 total_length = (len1 + len2 + 1);
 concatenated = malloc(sizeof(char) * (total_length));
-
 if (concatenated == NULL)
 {
 	return (NULL);
 }
-
 for (i = 0; i < total_length; i++)
 {
 	concatenated[i] = s1[i];
