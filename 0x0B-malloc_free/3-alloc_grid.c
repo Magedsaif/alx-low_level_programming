@@ -37,7 +37,11 @@ for (i = 0; i < height; i++)
 
 if (array[i] == NULL)
 {
-	return (NULL);
+for (j = 0; j < i; j++)
+{
+	free(array[j]);
+}
+free(array);
 }
 }
 for (i = 0; i < height; i++)
