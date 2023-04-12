@@ -19,23 +19,24 @@ int **array;
 int i;
 int j;
 
-if (width <= 0 || height <= 0)
+if (width <= 0 || height <= 0) /*If width or height is 0 or (-),return NULL*/
 {
 	return (NULL);
 }
-
+/*array point to block of pointers,one for each row*/
 array = (int **)malloc(height * sizeof(int *));
 
 if (array == NULL)
 {
 	return (NULL);
 }
-
+/*fill in pointers(all rows of them) with a pointer*/
+/*(also obtained from malloc) to columns number of ints*/
 for (i = 0; i < height; i++)
 {
 	array[i] = (int *)malloc(width * sizeof(int));
 
-if (array[i] == NULL)
+if (array[i] == NULL) /*to free the memory in case of null output*/
 {
 for (j = 0; j < i; j++)
 {
@@ -48,7 +49,7 @@ for (i = 0; i < height; i++)
 {
 for (j = 0; j < width; j++)
 {
-	array[i][j] = 0;
+	array[i][j] = 0; /*Each element of the grid should be initialized to 0*/
 }
 }
 return (array);
