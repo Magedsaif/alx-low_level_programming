@@ -50,7 +50,7 @@ for (i = 0; i < total_length; i++)
 {
 	concatenated[i] = s1[i];
 }
-for (i = 0; i < total_length; i++)
+for (i = 0; i < n; i++)
 {
 	concatenated[i + len1] = s2[i];
 }
