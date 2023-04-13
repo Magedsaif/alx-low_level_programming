@@ -55,5 +55,6 @@ for (i = 0; i < n; i++)
 	concatenated[i + len1] = s2[i];
 
 concatenated[i + len1] = '\0';
+
 return (concatenated);
 }
