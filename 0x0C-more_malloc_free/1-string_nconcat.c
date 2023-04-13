@@ -42,7 +42,7 @@ if (n >= len2) /*comparing n to see if use the entire string s2*/
 {
 	n = len2;
 }
-total_length = (len1 + len2 + 1);
+total_length = (len1 + n + 1);
 concatenated = malloc(sizeof(char) * (total_length));
 if (concatenated == NULL)
 	return (NULL);
