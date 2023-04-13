@@ -36,7 +36,7 @@ while (s1[len1] != '\0') /*geting the length of s1 */
 {
 	len1++;
 }
-while (n >= strlen(s2)) /*comparing n anuse the entire string s2*/
+while (n >= strlen(s2)) /*comparing n to see if use the entire string s2*/
 {
 	len2++;
 }
