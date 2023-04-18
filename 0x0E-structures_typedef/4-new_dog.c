@@ -18,11 +18,11 @@ dog_t *newdog;
 newdog = malloc(sizeof(dog_t)); /*allocating memory to anew dog to be stored*/
 
 if (newdog == NULL)
-	return(NULL);
+	return (NULL);
 
 
 /*allocating memory to a new dog name to be stored*/
-newdog->name = malloc(strlen(name) +1);
+newdog->name = malloc(strlen(name) + 1);
 
 if (name != NULL)
 {
@@ -37,7 +37,7 @@ else
 newdog->age = age; /*store the new age given*/
 
 /*allocating memory to a new dog owner to be stored*/
-newdog->owner = malloc(strlen(owner) +1);
+newdog->owner = malloc(strlen(owner) + 1);
 
 if (owner != NULL)
 {
