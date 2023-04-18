@@ -45,7 +45,7 @@ strcpy(newdog->owner, owner);/*copy the new dog owner*/
 }
 else
 {
-	free(newdog);
+	free(newdog->name);
 	free(name);
 	return (NULL);
 }
