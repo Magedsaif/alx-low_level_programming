@@ -36,7 +36,7 @@ else
 newdog->age = age; /*store the new age given*/
 if (owner != NULL)/*allocating memory to a new dog owner to be stored*/
 {
-newdog->owner = malloc(strlen(name) + 1);
+newdog->owner = malloc(strlen(owner) + 1);
 
 if (newdog->owner != NULL)
 	strcpy(newdog->owner, owner);/*copy the new dog name*/
