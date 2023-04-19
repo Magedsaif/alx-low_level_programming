@@ -16,7 +16,7 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	unsigned int i;/*to match the type of size_t */
 
 	if (array != NULL && action != NULL)/*checking if any pointer is NULL*/
-		for (i = 0; i <= size; i++)/*iterator*/
+		for (i = 0; i < size; i++)/*iterator*/
 		{
 			action(array[i]);/*listing numbers from array*/
 		}
