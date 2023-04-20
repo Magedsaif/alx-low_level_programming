@@ -23,6 +23,7 @@ a = atoi(argv[1]);
 b = atoi(argv[3]);
 
 pointer = get_op_func(argv[2]);
+
 if (pointer == NULL)
 {
 	printf("Error\n");
