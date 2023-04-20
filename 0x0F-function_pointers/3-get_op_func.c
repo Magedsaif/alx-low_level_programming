@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * get_op_func - function to get corresponding operation to a given operator
@@ -25,7 +26,7 @@ i = 0;
 /*If s doesn't match the 5 expected operators(+, -, *, /, %),return NULL*/
 while (ops[i].op != NULL)
 {
-	if (*s == *ops[i].op)/*if s matches any operator*/
+	if (strcmp(ops[i].op, s) == 0)/*if s matches any operator*/
 	{
 		return (ops[i].f);/*return corresponding operation to that operator*/
 	}
