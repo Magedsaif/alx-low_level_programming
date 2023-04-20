@@ -13,8 +13,6 @@ int main(int argc, char *argv[])
 int a, b, result;
 int (*pointer)(int, int);
 
-
-
 if (argc != 4)
 {
 	printf("Error\n");
@@ -30,6 +28,12 @@ if (pointer == NULL)
 	printf("Error\n");
 	exit(99);
 }
+if (((argv[2][0] == '/') || (argv[2][0] == '%')) && (b == 0))
+{
+        printf("Error\n");
+        exit(100);
+}
+
 result = (*pointer)(a, b);
 
 printf("%d\n", result);
