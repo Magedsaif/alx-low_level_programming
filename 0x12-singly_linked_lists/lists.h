@@ -1,19 +1,23 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <unistd.h>
+
+int _putchar(char c);
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * struct list_s - singly linked list
+ * @str: string - (malloc'ed string)
+ * @len: length of the string
+ * @next: points to the next node
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Description: singly linked list node structure
  */
-int _putchar(char c)
+typedef struct list_s
 {
-	return (write(1, &c, 1));
-}
+    char *str;
+    unsigned int len;
+    struct list_s *next;
+} list_t;
 
 size_t print_list(const list_t *h);
 #endif
