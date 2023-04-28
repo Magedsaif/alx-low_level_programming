@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -7,7 +6,6 @@
  * If str is NULL, print [0] (nil)
  * @h: pointer to the head of list with the type list_t
  * Return: the number of nodes
- *
 */
 size_t print_list(const list_t *h)
 {
