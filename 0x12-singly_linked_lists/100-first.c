@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-
+/**
+ * before_main - function that prints output before the
+ * main function is executed.
+*/
 void before_main(void) __attribute__((constructor));
 
 void before_main(void)
