@@ -15,12 +15,14 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	count = 0;
 	temp = head;
 
-	while (head)
+	while (temp != NULL)/*checking the search boundaries*/
 	{
-	if (count == index)
-		return (head);
-	count++;
-	temp = temp->next;
+		if (count == index)
+			return (temp);/*found a match in a node*/
+
+		count++;/*counter to compare index with*/
+		temp = temp->next;/*traversing through list*/
 	}
-	return (NULL);
+
+	return (NULL);/*node doesn't exist*/
 }
