@@ -7,14 +7,13 @@
  * Return: nothing
 */
 int pop_listint(listint_t **head)
-{	
+{
 	listint_t *temp_node;
 	int n;
 
 	if (head == NULL)
 		return (0);
-	else
-	{
+
 	temp_node = (*head);
 
 	*head = temp_node->next;
@@ -22,6 +21,6 @@ int pop_listint(listint_t **head)
 	n = temp_node->n;
 
 	free(temp_node);
-	}
-	return(n);
+
+	return (n);
 }
