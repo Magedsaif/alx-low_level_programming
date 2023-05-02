@@ -22,7 +22,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	while (temp != NULL)/*checking the search boundaries*/
 	{
 		if (count == idx)
-		{
+		{	
+			temp = malloc(sizeof(listint_t));
+			if (temp == NULL)
+				return (NULL);
 			temp->n = n;
 			return (temp);/*found a match in a node*/
 		}
