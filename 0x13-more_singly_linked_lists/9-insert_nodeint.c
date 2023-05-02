@@ -13,25 +13,44 @@
 */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *temp;
-	unsigned int count;
+	listint_t *temp, *new;
+	unsigned int i;
 
-	count = 0;
 	temp = *head;
 
-	while (temp != NULL)/*checking the search boundaries*/
+	if (head == NULL)
+		return (NULL);
+
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
 	{
-		if (count == idx)
-		{	
-			temp = malloc(sizeof(listint_t));
-			if (temp == NULL)
-				return (NULL);
-			temp->n = n;
-			return (temp);/*found a match in a node*/
-		}
-		count++;/*counter to compare index with*/
-		temp = temp->next;/*traversing through list*/
+		new->n = n;
 	}
 
-	return (NULL);/*node doesn't exist*/
+	if (idx == 0)
+	/*function inserts the new node at the beginning of the list */
+	{
+		new->next = temp;
+		*head = new;/*making it the new head*/
+		return (new);
+	}
+	/*
+	*scan the list til reaching the node just before the index
+	*where the new node should inserted
+	*/
+	for (i = 0; i < idx - 1 && temp != NULL; i++)
+	{
+
+		temp = temp->next;/*traversing*/
+	}
+	if (temp == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+	new->next = temp->next;/*inserting the new node*/
+	temp->next = new;
+
+	return (new);
 }
