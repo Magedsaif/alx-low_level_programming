@@ -3,7 +3,7 @@
  * main - a program that copies the content of a file to another file.
  * @ac: argument count
  * @av: array of arguments
- * Return: a value
+ * Return: a value.
  */
 int main(int ac, char **av)
 {
@@ -41,15 +41,20 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	if (close(fd_from) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_from);
-		exit(100);
-	}
-	if (close(fd_to) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_to);
-		exit(100);
-	}
+	close_fd(fd_from);
+	close_fd(fd_to);
 	return (0);
+}
+/**
+ * close_fd - function that checks if there is error closing
+ * @fd: file descriptor
+ * If close failed exit(100)
+ */
+void close_fd(int fd)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
