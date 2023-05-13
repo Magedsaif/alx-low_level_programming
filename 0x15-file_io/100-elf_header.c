@@ -1,3 +1,9 @@
+#include <elf.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -24,5 +30,5 @@ int main(int ac, char **av)
 		write(STDERR_FILENO, "Error: Can't read from file\n", 28);
 		exit(98);
 	}
-	exit(98);
+	return (0);
 }
