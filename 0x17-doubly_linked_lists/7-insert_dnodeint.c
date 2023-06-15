@@ -4,25 +4,22 @@
  * at a given position.
  *
  * @h: pointer to head of the list
- * @idx:
- * @n:
- * Return: sum or 0 if list is empty
+ * @idx:.
+ * @n:.
+ * Return: new node if list is empty
 */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *temp, *new_node;
-	unsigned int counter;
+	unsigned int counter = 1;
 
-	counter = 0;
 	temp = *h;
 	new_node = (dlistint_t *) malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
 		return (NULL);
-
 	new_node->n = n;
 	new_node->next = NULL;
 	new_node->prev = NULL;
-
 	if ((*h) == NULL)
 	{
 		if (idx == 0)
@@ -32,7 +29,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		}
 		return (NULL);
 	}
-
 	if (idx == 0)
 	{
 		new_node->next = *h;
@@ -40,13 +36,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		*h = new_node;
 		return (new_node);
 	}
-
 	while (temp->next != NULL && counter != idx)
 	{
-		counter++;
 		temp = temp->next;
+		counter++;
 	}
-
 	if (counter == idx)
 	{
 		new_node->prev = temp;
@@ -56,6 +50,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		temp->next = new_node;
 		return (new_node);
 	}
-	else
-		return (NULL);
+	return (NULL);
 }
