@@ -11,7 +11,7 @@
  *
  * In case of collision, add the new_node node at the beginning of the list
  *
- * This function should use the hash_djb2 function.
+ * This function should use the hash_djb2 function
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
