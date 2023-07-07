@@ -33,7 +33,8 @@ typedef struct hash_table_s
 unsigned long int size;
 hash_node_t **array;
 } hash_table_t;
-
+hash_node_t *add_node(hash_node_t **head, const char *key, const char *value);
+void free_all(hash_node_t *new_node, char*s);
 void hash_table_delete(hash_table_t *ht);
 void hash_table_print(const hash_table_t *ht);
 char *hash_table_get(const hash_table_t *ht, const char *key);
