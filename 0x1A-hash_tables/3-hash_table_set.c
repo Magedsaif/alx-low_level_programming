@@ -15,42 +15,84 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	hash_node_t *position, *new_node;
+	int index;
+	hash_node_t *new_node;
 
 	if (!ht || !ht->size || !strlen(key))
 		return (0);
+
 	index = key_index((const unsigned char *)key, ht->size);
-	position = ht->array[index];
-	while (position)
+	new_node = add_node(&ht->array[index], key, value);
+	if (new_node != NULL)
+		return (1);
+	else
+		return (0);
+}
+/**
+ * add_node - a function that adds a node
+ *
+ * @head: head of linked list
+ * @key: the key
+ * @value: the value
+ *
+ * Return:a new node.
+*/
+hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
+{
+
+	hash_node_t *new_node, *temp_node, *temp_node2;
+	char *temp_str;
+
+	temp_node = *head;
+	new_node = (hash_node_t *)malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->key = strdup(key);
+	if (new_node->key == NULL)
+		return (NULL);
+	if (value == NULL)
+		new_node->value = NULL;
+	else
 	{
-		if (!strcmp(position->key, key))
+		new_node->value = strdup(value);
+		if (new_node->value == NULL)
+			return (NULL);
+	}
+	if (temp_node == NULL)
+		new_node->next = NULL;
+	else
+	{
+		temp_node2 = temp_node;
+		while (temp_node2 != NULL)
 		{
-			free(position->value);
-			position->value = strdup((char *)value);
-			if (!position->value)
-				return (0);
-			return (1);
+			if (strcmp(temp_node2->key, new_node->key) == 0)
+			{
+				temp_str = temp_node2->value;
+				temp_node2->value = strdup(value);
+				free_all(new_node, temp_str);
+				return (temp_node2);
+			}
+			temp_node2 = temp_node2->next;
 		}
-		position = position->next;
+		new_node->next = temp_node;
+		*head = new_node;
 	}
-	new_node = malloc(sizeof(hash_node_t));
-	if (!new_node)
-		return (0);
-	new_node->key = strdup((char *)key);
-	if (!new_node->key)
-	{
-		free(new_node);
-		exit(0);
-	}
-	new_node->value = strdup((char *)value);
-	if (!new_node->value)
-	{
-		free(new_node->value);
-		free(new_node);
-		return (0);
-	}
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
-	return (1);
+	*head = new_node;
+	return (new_node);
+}
+
+/**
+ * free_all - a function that free all upon calling
+ *
+ * @new_node: new node to take the values from
+ * @s: string
+ *
+ * Return: NOTHING
+*/
+void free_all(hash_node_t *new_node, char *s)
+{
+	free(new_node->key);
+	free(new_node->value);
+	free(new_node);
+	free(s);
 }
