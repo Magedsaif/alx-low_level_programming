@@ -6,7 +6,7 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned int i = 0;
+	unsigned int j = 0;
 	unsigned int key;
 	hash_node_t *print;
 
@@ -18,14 +18,14 @@ void hash_table_print(const hash_table_t *ht)
 
 	printf("{");
 	/* Iterate through all the indices of the hash table */
-	for (i = 0; i < ht->size; i++)
+	for (j = 0; j < ht->size; j++)
 	{
-		print = ht->array[i];  /* Get the linked list at the current index */
+		print = ht->array[j];  /* Get the linked list at the current index */
 		while (print)  /* Iterate through the linked list */
 		{
 			/* Print the key-value pair */
 			printf("'%s': '%s'", print->key, print->value);
-			if (i != key)  /* Check if it's not the last non-empty index */
+			if (j != key)  /* Check if it's not the last non-empty index */
 			/* Add a comma and space for separating key-value pairs */
 				printf(", ");
 			print = print->next;  /* Move to the next node in the linked list*/
