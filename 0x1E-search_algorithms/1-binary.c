@@ -10,6 +10,7 @@
  * You can assume that array will be sorted in ascending order
  * You can assume that value won’t appear more than once in array
  *
+ * Return: integar
  */
 int binary_search(int *array, size_t size, int value)
 {
